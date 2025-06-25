@@ -1,4 +1,4 @@
-# Web Development Project 2 - _Flashcards_
+# Web Development Project 3 - _Flashcards Pt.2_
 
 Submitted by: **Olatomiwa Aluko**
 
