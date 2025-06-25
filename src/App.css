@@ -20,7 +20,7 @@ body {
   background: #f8f9fa;
   min-height: 100vh;
   overflow-x: hidden;
-  color: #333;
+  color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -185,7 +185,7 @@ header {
 header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333;
+  color: #000;
   margin-bottom: 1rem;
   text-align: center;
   letter-spacing: -0.025em;
@@ -193,7 +193,7 @@ header h1 {
 
 header p {
   font-size: 1.1rem;
-  color: #666;
+  color: #000;
   margin-bottom: 0.5rem;
   line-height: 1.5;
   text-align: center;
@@ -202,7 +202,7 @@ header p {
 
 .card-count {
   font-weight: 600;
-  color: #333;
+  color: #000;
   font-size: 1rem !important;
   text-align: center;
 }
@@ -337,7 +337,7 @@ header p {
 
 .start-message h2 {
   font-size: 2rem;
-  color: #333;
+  color: #000;
   font-weight: 600;
   letter-spacing: -0.025em;
 }
@@ -354,7 +354,7 @@ header p {
 
 .question h3 {
   font-size: 1.25rem;
-  color: #333;
+  color: #000;
   line-height: 1.5;
   font-weight: 500;
   text-align: center;
@@ -362,7 +362,7 @@ header p {
 
 .answer p {
   font-size: 1.125rem;
-  color: #555;
+  color: #000;
   line-height: 1.6;
   font-weight: 400;
   text-align: center;
@@ -370,8 +370,9 @@ header p {
 
 .navigation {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
+  justify-content: center;
 }
 
 .start-instruction {
@@ -429,6 +430,220 @@ header p {
   border-color: #555;
 }
 
+/* Small shuffle button for navigation */
+.shuffle-btn-small {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shuffle-btn-small:hover {
+  background: #555;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
+}
+
+/* Guess section styles */
+.guess-section {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.guess-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 350px;
+  align-items: stretch;
+}
+
+.guess-input-container label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+}
+
+.guess-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  color: #000;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.guess-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.guess-input:disabled {
+  background: #f8f9fa;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.guess-input::placeholder {
+  color: #666;
+}
+
+.submit-btn {
+  padding: 0.75rem 1.5rem;
+  background: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #4b5563;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
+
+.submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Streak display styles */
+.streak-display {
+  font-weight: 600;
+  color: #000;
+  font-size: 1rem !important;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Start buttons container */
+.start-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Shuffle button styles */
+.shuffle-btn {
+  padding: 0.75rem 1.5rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.shuffle-btn:hover {
+  background: #555;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.3);
+}
+
+@keyframes feedbackFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flashcard feedback border effects */
+.flashcard.feedback-correct .flashcard-front {
+  border-color: #22c55e;
+  border-width: 3px;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.flashcard.feedback-incorrect .flashcard-front {
+  border-color: #ef4444;
+  border-width: 3px;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Card indicator styles */
+.card-indicator {
+  font-size: 0.875rem;
+  color: #000;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+/* Updated navigation button styles */
+.nav-btn.disabled {
+  background: #f8f9fa !important;
+  color: #adb5bd !important;
+  cursor: not-allowed !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+  transform: none !important;
+}
+
+.nav-btn.next.disabled {
+  background: #6b7280 !important;
+  color: #d1d5db !important;
+}
+
+/* Guess section below flashcard */
+.guess-section-below {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.guess-section-below .guess-input-container {
+  max-width: 400px;
+}
+
+/* Responsive adjustments for guess section below */
+@media (max-width: 768px) {
+  .guess-section-below .guess-input-container {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guess-section-below .guess-input-container {
+    max-width: 300px;
+  }
+}
+
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
@@ -458,6 +673,10 @@ header p {
   .answer p {
     font-size: 1.1rem;
   }
+
+  .guess-section {
+    max-width: 280px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -481,4 +700,38 @@ header p {
   .answer p {
     font-size: 1rem;
   }
+
+  .guess-section {
+    max-width: 250px;
+  }
+
+  .guess-input {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Force input text visibility */
+input[type="text"] {
+  color: #000 !important;
+  background-color: #ffffff !important;
+}
+
+input[type="text"]:focus {
+  color: #000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Override any global dark theme styles */
+.app * {
+  color: inherit;
+}
+
+.app input {
+  color: #000 !important;
 }
